@@ -11,10 +11,14 @@ Example: The debug-version of *PDOStatement* is *PDOStatementDbg* and is located
 
 ### PDOStatementDbg
 If you want to use the debug-class in your existing PDO-connection you have to register the class:  
-`$dbh = new PDO(...);  
-$dbh->setAttribute(PDO::ATTR_STATEMENT_CLASS, ['PDOStatementDbg', [$dbh]]);`   
+```php
+$dbh = new PDO(...);  
+$dbh->setAttribute(PDO::ATTR_STATEMENT_CLASS, ['PDOStatementDbg', [$dbh]]);
+```
   
 You can use the following methods:  
+
+
 | Method | Description |  
 | --- | --- |  
 | `getQueryString()` | query for direct use |  
