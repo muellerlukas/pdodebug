@@ -16,7 +16,7 @@ $dbh = new PDO(...);
 $dbh->setAttribute(PDO::ATTR_STATEMENT_CLASS, ['PDOStatementDbg', [$dbh]]);
 ```
   
-You can use the following methods:  
+You can use the following methods on with your statement (e.g. created with `$dbh->prepare(...)`):  
 
 
 | Method | Description |  
