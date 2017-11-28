@@ -1,10 +1,20 @@
-## Debug-Classes for PDO
+# Debug-Classes for PDO
 
-### Summary
+## Summary
 Theses classes are wrappers for PHP PDO.   
 They are intended for easier debugging queries and connections.  
 This very first release just supports printing a ready-to-use query after creating a prepared statement.
 
-### Usage
+## Usage
 Of course you have to include the matching class. The name of the class is the original class-name extended by the string "Dbg".  
-Example: The debug-version of _PDOStatement_ is _PDOStatementDbg_ and is located in the file _PDOStatementDbg.class.php_
+Example: The debug-version of _PDOStatement_ is _PDOStatementDbg_ and is located in the file _PDOStatementDbg.class.php_  
+
+### PDOStatementDbg
+If you want to use the debug-class in your existing PDO-connection you have to register the class:  
+`$dbh = new PDO(...);  
+$dbh->setAttribute(PDO::ATTR_STATEMENT_CLASS, ['PDOStatementDbg', [$dbh]]);`   
+  
+You can use the following methods:
+|Method|Return|
+|--|--|
+|getQueryString|query for direct use|
